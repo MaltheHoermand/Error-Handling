@@ -1,9 +1,11 @@
 <?php
 require_once "classes/Messages.php";
 
-$message = "afasfasd";
+$message = 2;
 try {
-    Messages::print_tinytext($message);
+    Messages::print_message($message);
 } catch (Exception $e) {
-    echo "Caught exception " . $e->getMessage() . "\n";
+    echo  $e->getMessage();
+} finally {
+    echo "<br> <br> end of try catch";
 }

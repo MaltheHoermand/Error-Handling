@@ -3,18 +3,19 @@
 class Messages{
 
     /**
-     * Throws exception if $message contains more than 255 characters.
-     * Else prints message
+     * Takes and prints message
+     * Throws error if args not of type String
      *
      * @param $message
      * @return void
      * @throws Exception
      */
-    public static function print_tinytext($message) {
-        if (strlen($message) > 255 ) {
-            throw new Exception("Der må maks bruges 255 tegn");
-        }else {
+    public static function print_message($message) {
+        if (gettype($message) == 'string') {
             echo $message;
+
+        }else {
+            throw new Exception("message not of type String");
         }
     }
 }
