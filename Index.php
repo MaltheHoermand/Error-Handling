@@ -1,11 +1,12 @@
 <?php
-require_once "classes/Messages.php";
+require_once "classes/Example.php";
 
-$message = 2;
 try {
-    Messages::print_message($message);
-} catch (Exception $e) {
-    echo  $e->getMessage();
-} finally {
-    echo "<br> <br> end of try catch";
+    $ex = new Example();
+    $ex->test_case ("Hello!");
+
+} catch (InvalidArgumentException $e) {
+    echo "Argument exception: " . $e->getMessage();
+} catch (UnexpectedValueException $e) {
+    echo "Value exception: " . $e->getMessage();
 }
