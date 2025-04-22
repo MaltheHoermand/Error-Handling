@@ -15,7 +15,7 @@ class Messages{
             echo $message;
 
         }else {
-            throw new Exception("message not of type String");
+            throw new Exception("message of type: ".gettype($message). ". expected String");
         }
     }
 }
